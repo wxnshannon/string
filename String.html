@@ -1,0 +1,70 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<html> 
+<head> 
+<title>字符串比较</title> 
+</head> 
+<body> 
+<script language = javascript> 
+function diff(){ 
+var s = f.s1.value; 
+var s1 = f.s2.value; 
+document.write("第一个字符串是 " + s + "<br>"); 
+document.write("第二个字符串是: " + s1 + "<br>"); 
+function sort(s, a){ 
+	for(i=0; i<s.length;i++){ 
+		a[i] = s.charAt(i); 
+	} 
+	return a.sort(); 
+} 
+	list = sort(s, new Array()); 
+	list1 = sort(s1, new Array()); 
+	var m = 0; 
+	var n = 0; 
+	var l = new Array(); 
+	for(i = 0; i < list.length; i++){ } 
+	for(i = 0; i < list1.length; i++){ } 
+	j = 0; 
+	while(m < list.length && n < list1.length){ 
+		if (list[m] < list1[n]){ 
+		l[j] = list[m]; 
+		if (m < list.length){ 
+			m++; 
+		} 
+		i++; 
+		j++; 
+		continue; 
+	} 
+		if (list[m] > list1[n]){ 
+		l[j] = list1[n]; 
+			if (n < list1.length){ 
+				n++; 
+			} 
+			i++; 
+			j++; 
+			continue; 
+		} 
+		if (list[m] == list1[n]){ 
+			if (m < list.length){ 
+				m++; 
+			} 
+		if (n < list1.length){ 
+			n++; 
+		} 
+		i++; 
+		continue; 
+	} 
+} 
+if (l.length == 0) 
+alert("两个字符串所包含的字符完全一样"); 
+else 
+alert("两个字符串有不同的字符,它们是: " + '"' + l.join(", ") + '"'); 
+} 
+</script> 
+<form name = "f"> 
+<input type = "text" name = "s1"> 
+<input type = "text" name = "s2"> 
+<input type = "button" name = "compare" value = "比较" onclick = "diff()"> 
+</form> 
+</body> 
+</html> 
